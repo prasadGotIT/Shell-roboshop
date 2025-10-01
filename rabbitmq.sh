@@ -28,7 +28,7 @@ VALIDATE(){
 
 }
 
-cp $SCRIPT_DIR/rabbitmq.rep /etc/yum.repos.d/rabbitmq.repo &>>LOGS_FILE
+cp $SCRIPT_DIR/rabbitmq.repo  /etc/yum.repos.d/rabbitmq.repo &>>LOGS_FILE
 VALIDATE $? "Adding rabbitmq repo"
 
 dnf install rabbitmq-server -y &>>LOGS_FILE
