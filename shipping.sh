@@ -37,7 +37,7 @@ if [ $? -ne 0 ]; then
    useradd --system --home /app --shell /sbin/nologin --comment "roboshop system user" roboshop &>>$LOG_FILE
    VALIDATE $? "Creating system user"
 else
-   echo -e "User already exist"...$Y Skipping $N "
+   echo -e "User already exist"...$Y Skipping $N"
 fi
 
 mkdir -p /app
@@ -73,7 +73,7 @@ if [ $? -ne 0 ]; then
     mysql -h $MYSQL_HOST -uroot -pRoboShop@1 < /app/db/app-user.sql  &>>$LOG_FILE
     mysql -h $MYSQL_HOST -uroot -pRoboShop@1 < /app/db/master-data.sql &>>$LOG_FILE
 else
-    echo -e "Shipping data is already loaded ... $Y SKIPPING $N"
+    echo "Shipping data is already loaded"
 fi
 
 systemctl restart shipping
