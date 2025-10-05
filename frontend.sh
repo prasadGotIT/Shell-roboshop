@@ -37,7 +37,7 @@ dnf install nginx -y &>>$LOG_FILE
 VALIDATE $? "Installing Nginx"
 
 systemctl enable nginx  &>>$LOG_FILE
-systemctl start nginx 
+systemctl start nginx &>>$LOG_FILE
 VALIDATE $? "Starting Nginx"
 
 rm -rf /usr/share/nginx/html/*
@@ -50,5 +50,5 @@ rm -rf /etc/nginx/nginx.conf
 cp $SCRIPT_DIR/nginx.conf /etc/nginx/nginx.conf
 VALIDATE $? "Copying nginx.conf"
 
-systemctl restart nginx 
+systemctl restart nginx &>>$LOG_FILE
 VALIDATE $? "Restarting Nginx"
