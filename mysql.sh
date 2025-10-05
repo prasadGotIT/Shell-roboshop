@@ -33,7 +33,8 @@ systemctl enable mysqld &>>LOGS_FILE
 VALIDATE $? "Enabling mysql"
 systemctl start mysqld  &>>LOGS_FILE
 VALIDATE $? "Starting mysql"
-mysql_secure_installation --set-root-pass RoboShop@1  
+mysql_secure_installation --set-root-pass RoboShop@1
+VALIDATE $? "setting up root password"  
 
 END_TIME=$(date +%s)
 TOTAL_TIME=$(( $END_TIME - $START_TIME))
